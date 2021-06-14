@@ -10,4 +10,5 @@ public class Dialogue
     public string[] Sentences;
     public string[] Option = new string[3];
     public bool EnableOptions = false;
+    public int CorrectOption;
 }
