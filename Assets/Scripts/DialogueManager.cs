@@ -178,5 +178,13 @@ public class DialogueManager : MonoBehaviour
         EndDialogue();
         WrongDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
     }
+
+    public void PlayActiveCustomerDialogue()
+    {
+        var activeCustomer = CustomerManager.cm.customer;
+        var diaogueTrigger = activeCustomer.GetComponent<DialogueTrigger>();
+        if (diaogueTrigger != null)
+            diaogueTrigger.TriggerDialogue();
+    }
 }
 
