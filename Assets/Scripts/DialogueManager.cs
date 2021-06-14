@@ -61,6 +61,16 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private GameObject WrongDialogue;
 
+    public static DialogueManager dm;
+
+    private void Awake()
+    {
+        if (dm == null)
+        {
+            dm = this;
+        }
+    }
+
     void Start()
     {
         Sentences = new Queue<string>();
