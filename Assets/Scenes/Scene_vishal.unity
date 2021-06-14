@@ -153,7 +153,7 @@ Transform:
   - {fileID: 169160942}
   - {fileID: 200244631}
   m_Father: {fileID: 1181182209}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &65595710
 GameObject:
@@ -275,6 +275,28 @@ MonoBehaviour:
     - Nuuuu
     EnableOptions: 1
     CorrectOption: 2
+  correctDialogue:
+    Name: Mr.Smith
+    Sentences:
+    - Ahoy !
+    - Voila!
+    Option:
+    - 
+    - 
+    - 
+    EnableOptions: 0
+    CorrectOption: 0
+  wrongDialogue:
+    Name: Mr.Smith
+    Sentences:
+    - Damn!
+    - Oh Noooooooo!
+    Option:
+    - 
+    - 
+    - 
+    EnableOptions: 0
+    CorrectOption: 0
 --- !u!4 &71590808
 Transform:
   m_ObjectHideFlags: 0
@@ -609,6 +631,24 @@ MonoBehaviour:
     - 
     EnableOptions: 0
     CorrectOption: 0
+  correctDialogue:
+    Name: 
+    Sentences: []
+    Option:
+    - 
+    - 
+    - 
+    EnableOptions: 0
+    CorrectOption: 0
+  wrongDialogue:
+    Name: 
+    Sentences: []
+    Option:
+    - 
+    - 
+    - 
+    EnableOptions: 0
+    CorrectOption: 0
 --- !u!1 &200244630
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +697,24 @@ MonoBehaviour:
     Sentences:
     - You Failed.
     - The paitent might suffer deep trauma because of this.
+    Option:
+    - 
+    - 
+    - 
+    EnableOptions: 0
+    CorrectOption: 0
+  correctDialogue:
+    Name: 
+    Sentences: []
+    Option:
+    - 
+    - 
+    - 
+    EnableOptions: 0
+    CorrectOption: 0
+  wrongDialogue:
+    Name: 
+    Sentences: []
     Option:
     - 
     - 
@@ -1014,7 +1072,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1181182209}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &890387349
 MonoBehaviour:
@@ -1040,6 +1098,28 @@ MonoBehaviour:
     - Anger
     EnableOptions: 1
     CorrectOption: 3
+  correctDialogue:
+    Name: Mr.Fin
+    Sentences:
+    - Yipee...
+    - Magic Magic
+    Option:
+    - 
+    - 
+    - 
+    EnableOptions: 0
+    CorrectOption: 0
+  wrongDialogue:
+    Name: Mr.Fin
+    Sentences:
+    - Death
+    - Cry
+    Option:
+    - 
+    - 
+    - 
+    EnableOptions: 0
+    CorrectOption: 0
 --- !u!1 &1159648493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,8 +1360,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 71590808}
-  - {fileID: 62004554}
   - {fileID: 890387348}
+  - {fileID: 62004554}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1549,8 +1629,8 @@ MonoBehaviour:
   - {fileID: 2073190361}
   - {fileID: 136126552}
   nextButton: {fileID: 1159648493}
-  CorrectDialogue: {fileID: 169160941}
-  WrongDialogue: {fileID: 200244630}
+  correctDeafultDialogue: {fileID: 169160941}
+  wrongDefaultDialogue: {fileID: 200244630}
 --- !u!4 &1699196558
 Transform:
   m_ObjectHideFlags: 0
@@ -1559,7 +1639,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699196556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 200.75739, y: 129.98634, z: -18.570097}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
