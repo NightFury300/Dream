@@ -131,33 +131,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void Option1Clicked()
+    public void OptionClicked(int option)
     {
-        if (CorrectOption == 1)
-        {
-            OnCorrectAnswer();
-        }
-        else
-        {
-            OnWrongAnswer();
-        }
-    }
-
-    public void Option2Clicked()
-    {
-        if (CorrectOption == 2)
-        {
-            OnCorrectAnswer();
-        }
-        else
-        {
-            OnWrongAnswer();
-        }
-    }
-
-    public void Option3Clicked()
-    {
-        if (CorrectOption == 3)
+        if (CorrectOption == option)
         {
             OnCorrectAnswer();
         }
