@@ -10,24 +10,6 @@ using UnityEngine.UI;
  *Size to 0, It should always remain 3 even when not using options.
  */
 
-/*
- * Things to Do:
- * Each Customer will have entry dialogues,dialogues if they are healed or dialogues for their final words before
- * their demise and these conditional dialogues should be triggered preferably in OnCorrectAnswer(),OnWrongAnswer()
- * functions.I am not sure whats the best way to do it but here are some ugly ideas-
- * 
- * 1.We can just create two empty objects named customer1healed and customer1dead with dialogue trigger 
- * scripts attached to them and reference them in this class but that way we will need to have two extra GameObject
- * variable (for each customer) in here and this is very ugly if we are dealing with more customers.
- * 
- * 2.We implement conditional Dialogues in Dialogue Script(This is a very good approach) but I am not sure how 
- * to do that because I tested and apprently Inspector isn't detecting and letting us add two members of type
- * Dialogue in class Dialogue.But if some way this idea could be implemented it would be Neat.
- * 
- * 3.If you have a better idea you should definitely go with it,the above ideas arent that great anyways those were
- * the ideas that came first to my mind and thanks for reading this.
- */
-
 public class DialogueManager : MonoBehaviour
 {
     private Queue<string> Sentences;
@@ -56,10 +38,23 @@ public class DialogueManager : MonoBehaviour
     private int CorrectOption;
 
     [SerializeField]
-    private GameObject CorrectDialogue;
+    private GameObject correctDeafultDialogue;
 
     [SerializeField]
-    private GameObject WrongDialogue;
+    private GameObject wrongDefaultDialogue;
+
+    public static DialogueManager dm;
+
+    private bool correctDefaultTrigger;
+    private bool wrongDefaultTrigger;
+
+    private void Awake()
+    {
+        if (dm == null)
+        {
+            dm = this;
+        }
+    }
 
     void Start()
     {
@@ -129,35 +124,21 @@ public class DialogueManager : MonoBehaviour
         {
             options[i].SetActive(false);
         }
-    }
-
-    public void Option1Clicked()
-    {
-        if (CorrectOption == 1)
+        if(correctDefaultTrigger)
         {
-            OnCorrectAnswer();
+            correctDeafultDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
+            correctDefaultTrigger = false;
         }
-        else
+        if (wrongDefaultTrigger)
         {
-            OnWrongAnswer();
+            wrongDefaultDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
+            wrongDefaultTrigger = false;
         }
     }
 
-    public void Option2Clicked()
+    public void OptionClicked(int option)
     {
-        if (CorrectOption == 2)
-        {
-            OnCorrectAnswer();
-        }
-        else
-        {
-            OnWrongAnswer();
-        }
-    }
-
-    public void Option3Clicked()
-    {
-        if (CorrectOption == 3)
+        if (CorrectOption == option)
         {
             OnCorrectAnswer();
         }
@@ -170,13 +151,23 @@ public class DialogueManager : MonoBehaviour
     private void OnCorrectAnswer()
     {
         EndDialogue();
-        CorrectDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
+        correctDefaultTrigger = true;
+        CustomerManager.cm.customer.GetComponent<DialogueTrigger>().TriggerCorrectDialogue();
     }
 
     private void OnWrongAnswer()
     {
         EndDialogue();
-        WrongDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
+        wrongDefaultTrigger = true;
+        CustomerManager.cm.customer.GetComponent<DialogueTrigger>().TriggerWrongDialogue();
+    }
+
+    public void PlayActiveCustomerDialogue()
+    {
+        var activeCustomer = CustomerManager.cm.customer;
+        var diaogueTrigger = activeCustomer.GetComponent<DialogueTrigger>();
+        if (diaogueTrigger != null)
+            diaogueTrigger.TriggerDialogue();
     }
 }
 

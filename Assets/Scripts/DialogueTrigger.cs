@@ -5,9 +5,21 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
+    public Dialogue correctDialogue;
+    public Dialogue wrongDialogue;
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        DialogueManager.dm.StartDialogue(dialogue);
+    }
+
+    public void TriggerCorrectDialogue()
+    {
+        DialogueManager.dm.StartDialogue(correctDialogue);
+    }
+
+    public void TriggerWrongDialogue()
+    {
+        DialogueManager.dm.StartDialogue(wrongDialogue);
     }
 }
