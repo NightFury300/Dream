@@ -241,7 +241,7 @@ MonoBehaviour:
     - Kalm
     - Panik
     - Nuuuu
-    EnableOptions: 0
+    EnableOptions: 1
 --- !u!4 &71590808
 Transform:
   m_ObjectHideFlags: 0
