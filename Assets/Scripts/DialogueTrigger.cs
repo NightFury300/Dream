@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue dialogue;
-    public Dialogue correctDialogue;
-    public Dialogue wrongDialogue;
+    public Dialogue[] dialogues;
+    public Dialogue[] correctDialogues;
+    public Dialogue[] wrongDialogues;
 
     public void TriggerDialogue()
     {
-        DialogueManager.dm.StartDialogue(dialogue);
+        DialogueManager.dm.StartDialogue(dialogues[0]);
     }
 
     public void TriggerCorrectDialogue()
     {
-        DialogueManager.dm.StartDialogue(correctDialogue);
+        DialogueManager.dm.StartDialogue(correctDialogues[0]);
     }
 
     public void TriggerWrongDialogue()
     {
-        DialogueManager.dm.StartDialogue(wrongDialogue);
+        DialogueManager.dm.StartDialogue(wrongDialogues[0]);
     }
 }

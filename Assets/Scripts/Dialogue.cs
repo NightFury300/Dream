@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Dialogue
+[CreateAssetMenu(fileName = "New Dialogue", menuName = "Dialogue", order = 52)]
+public class Dialogue : ScriptableObject
 {
-    public string Name;
+    public string name;
     [TextArea(3,10)]
-    public string[] Sentences;
-    public string[] Option = new string[3];
-    public bool EnableOptions = false;
-    public int CorrectOption;
+    public string[] sentences;
+    public string[] options = new string[3];
+    public bool enableOptions = false;
+    public int correctOption;
 }

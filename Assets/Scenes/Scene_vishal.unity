@@ -185,40 +185,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711ebcfea482c5e4bb52421660d62700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    Name: Mr.Smith
-    Sentences:
-    - Hey There!
-    - Yeah
-    - Alright
-    Option:
-    - Kalm
-    - Panik
-    - Nuuuu
-    EnableOptions: 1
-    CorrectOption: 2
-  correctDialogue:
-    Name: Mr.Smith
-    Sentences:
-    - Ahoy !
-    - Voila!
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
-  wrongDialogue:
-    Name: Mr.Smith
-    Sentences:
-    - Damn!
-    - Oh Noooooooo!
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
+  dialogues:
+  - {fileID: 11400000, guid: c51362644c123774fa71e7807b2805e2, type: 2}
+  - {fileID: 11400000, guid: f6832601e505f0c4cb347f2c7ac9c3e0, type: 2}
+  correctDialogues:
+  - {fileID: 11400000, guid: f440fab927d641e46a28676137232c18, type: 2}
+  - {fileID: 11400000, guid: 1475a0d9dfb6b6848b28f671c19e8f62, type: 2}
+  wrongDialogues:
+  - {fileID: 11400000, guid: 257e70b5e86dc504e8cc7e25d93ec4e9, type: 2}
+  - {fileID: 11400000, guid: 882a0b6bed9545b419b671ef1755e7e7, type: 2}
 --- !u!4 &71590808
 Transform:
   m_ObjectHideFlags: 0
@@ -563,35 +538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711ebcfea482c5e4bb52421660d62700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    Name: Bingo!
-    Sentences:
-    - Great Job!
-    - You successfully saved your paitent's life.
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
-  correctDialogue:
-    Name: 
-    Sentences: []
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
-  wrongDialogue:
-    Name: 
-    Sentences: []
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
+  dialogues: []
+  correctDialogues: []
+  wrongDialogues: []
 --- !u!1 &198201139
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,35 +614,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711ebcfea482c5e4bb52421660d62700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    Name: Oh No!
-    Sentences:
-    - You Failed.
-    - The paitent might suffer deep trauma because of this.
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
-  correctDialogue:
-    Name: 
-    Sentences: []
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
-  wrongDialogue:
-    Name: 
-    Sentences: []
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
+  dialogues: []
+  correctDialogues: []
+  wrongDialogues: []
 --- !u!1 &233495249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &890387348
 Transform:
   m_ObjectHideFlags: 0
@@ -1130,40 +1053,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711ebcfea482c5e4bb52421660d62700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    Name: Mr.Fin
-    Sentences:
-    - Yo boi!
-    - Come on
-    - Yeah yeah
-    Option:
-    - Boom
-    - Tada
-    - Anger
-    EnableOptions: 1
-    CorrectOption: 3
-  correctDialogue:
-    Name: Mr.Fin
-    Sentences:
-    - Yipee...
-    - Magic Magic
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
-  wrongDialogue:
-    Name: Mr.Fin
-    Sentences:
-    - Death
-    - Cry
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
+  dialogues: []
+  correctDialogues: []
+  wrongDialogues: []
 --- !u!50 &890387350
 Rigidbody2D:
   serializedVersion: 4
@@ -1904,7 +1796,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customers:
   - {fileID: 71590806}
-  - {fileID: 890387347}
   activeCustomer: {fileID: 0}
   ExitTo: {x: 499, y: 100}
   EntryTo: {x: 202, y: 99}
