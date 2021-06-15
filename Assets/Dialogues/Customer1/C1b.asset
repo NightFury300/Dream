@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
   m_Name: C1b
   m_EditorClassIdentifier: 
-  Name: Mr. Smith
-  Sentences:
-  - qqq
-  - nhjk
-  Option:
-  - qaz
-  - pois
-  - ahem
-  EnableOptions: 1
-  CorrectOption: 2
+  name: Mr. Fin
+  sentences:
+  - qweerty
+  - brad
+  - pong
+  options:
+  - oh my dear
+  - qasd
+  - yup
+  enableOptions: 1
+  correctOption: 3
