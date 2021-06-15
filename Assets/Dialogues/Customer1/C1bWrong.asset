@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
   m_Name: C1bWrong
   m_EditorClassIdentifier: 
-  name: Mr. Fin
+  name: Mr. Smith
   sentences:
   - nonononon
   - damn bruh

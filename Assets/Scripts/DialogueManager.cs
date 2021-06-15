@@ -37,16 +37,7 @@ public class DialogueManager : MonoBehaviour
 
     private int correctOption;
 
-    [SerializeField]
-    private GameObject correctDeafultDialogue;
-
-    [SerializeField]
-    private GameObject wrongDefaultDialogue;
-
     public static DialogueManager dm;
-
-    private bool correctDefaultTrigger;
-    private bool wrongDefaultTrigger;
 
     private void Awake()
     {
@@ -91,7 +82,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                EndDialogue();              
+                CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(0);
             }
             return;
         }
@@ -100,11 +91,11 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
     }
 
-    public void DisplayOptions()
+    public void DisplayOptions(bool display = true)
     {
-        for(int i = 0;i<3;i++)
+        for(int i = 0; i < 3; i++)
         {
-            options[i].SetActive(true);
+            options[i].SetActive(display);
         }
     }
 
@@ -122,26 +113,12 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsDialogueOpen", false);
         nextButton.SetActive(true);
-        for (int i = 0; i < 3; i++)
-        {
-            options[i].SetActive(false);
-        }
-        if(correctDefaultTrigger)
-        {
-            correctDeafultDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
-            correctDefaultTrigger = false;
-            CustomerManager.cm.ExitCurrentCustomer();
-        }
-        if (wrongDefaultTrigger)
-        {
-            wrongDefaultDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
-            wrongDefaultTrigger = false;
-            CustomerManager.cm.ReadyForNextCustomer(true);
-        }
+        DisplayOptions(false);
     }
 
     public void OptionClicked(int option)
     {
+        //(correctOption == option) ? OnCorrectAnswer() : OnWrongAnswer();
         if (correctOption == option)
         {
             OnCorrectAnswer();
@@ -154,16 +131,14 @@ public class DialogueManager : MonoBehaviour
 
     private void OnCorrectAnswer()
     {
-        EndDialogue();
-        correctDefaultTrigger = true;
-        CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerCorrectDialogue();
+        DisplayOptions(false);
+        CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(1);
     }
 
     private void OnWrongAnswer()
     {
-        EndDialogue();
-        wrongDefaultTrigger = true;
-        CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerWrongDialogue();
+        DisplayOptions(false);
+        CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(2);
     }
 
     public void PlayActiveCustomerDialogue()
@@ -171,7 +146,7 @@ public class DialogueManager : MonoBehaviour
         var activeCustomer = CustomerManager.cm.activeCustomer;
         var diaogueTrigger = activeCustomer.GetComponent<DialogueTrigger>();
         if (diaogueTrigger != null)
-            diaogueTrigger.TriggerDialogue();
+            CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(0);
     }
 }
 

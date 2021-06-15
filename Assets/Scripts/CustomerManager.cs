@@ -14,7 +14,7 @@ public class CustomerManager : MonoBehaviour
 
     private Vector2 wayPoint;
     [SerializeField]
-    private Vector2 exitTo;
+    private Vector2 exitFrom;
     [SerializeField]
     private Vector2 entryTo;
     [SerializeField]
@@ -47,7 +47,7 @@ public class CustomerManager : MonoBehaviour
         Vector2 currentLoc = activeCustomer.transform.position;
         Vector2 distance =   wayPoint - currentLoc;
 
-        if (!(Mathf.Abs(distance.magnitude) < 2f))
+        if (!(Mathf.Abs(distance.magnitude) < 0.1f))
         {
             activeCustomer.GetComponent<Rigidbody2D>().velocity = new Vector2(distance.normalized.x * speed,
                                                                         distance.normalized.y * speed);
@@ -58,7 +58,7 @@ public class CustomerManager : MonoBehaviour
             destinationReached = true;
             if (wayPoint.Equals(entryTo))
             {
-                activeCustomer.GetComponent<DialogueTrigger>().TriggerDialogue();
+                activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(0);
             }
             else
             {
@@ -85,7 +85,7 @@ public class CustomerManager : MonoBehaviour
 
     public void ExitCurrentCustomer()
     {
-        wayPoint = exitTo;
+        wayPoint = exitFrom;
         destinationReached = false;
     }
 
