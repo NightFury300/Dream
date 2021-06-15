@@ -12,19 +12,19 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    private Queue<string> Sentences;
+    private Queue<string> sentences;
 
     [SerializeField]
-    private Text Name;
+    private Text name;
     [SerializeField]
-    private Text Sentence;
+    private Text sentence;
 
     [SerializeField]
-    private Text Option1;
+    private Text option1;
     [SerializeField]
-    private Text Option2;
+    private Text option2;
     [SerializeField]
-    private Text Option3;
+    private Text option3;
 
     public Animator animator;
 
@@ -35,18 +35,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private GameObject nextButton;
 
-    private int CorrectOption;
-
-    [SerializeField]
-    private GameObject correctDeafultDialogue;
-
-    [SerializeField]
-    private GameObject wrongDefaultDialogue;
+    private int correctOption;
 
     public static DialogueManager dm;
-
-    private bool correctDefaultTrigger;
-    private bool wrongDefaultTrigger;
 
     private void Awake()
     {
@@ -58,31 +49,31 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        Sentences = new Queue<string>();
+        sentences = new Queue<string>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
-        Sentences.Clear();
-        foreach(string sentence in dialogue.Sentences)
+        sentences.Clear();
+        foreach(string sentence in dialogue.sentences)
         {
-            Sentences.Enqueue(sentence);
+            sentences.Enqueue(sentence);
         }
         animator.SetBool("IsDialogueOpen", true);
-        Name.text = dialogue.Name;        
-        Option1.text = dialogue.Option[0];
-        Option2.text = dialogue.Option[1];
-        Option3.text = dialogue.Option[2];
-        enableOptions = dialogue.EnableOptions;
-        CorrectOption = dialogue.CorrectOption;
-        if (Sentences.Count != 0)
+        name.text = dialogue.name;        
+        option1.text = dialogue.options[0];
+        option2.text = dialogue.options[1];
+        option3.text = dialogue.options[2];
+        enableOptions = dialogue.enableOptions;
+        correctOption = dialogue.correctOption;
+        if (sentences.Count != 0)
             nextButton.SetActive(true);
         DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
     {
-        if(Sentences.Count == 0)
+        if(sentences.Count == 0)
         {
             if (enableOptions)
             {
@@ -91,29 +82,29 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                EndDialogue();              
+                CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(0);
             }
             return;
         }
-        string sentence = Sentences.Dequeue();
+        string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
 
-    public void DisplayOptions()
+    public void DisplayOptions(bool display = true)
     {
-        for(int i = 0;i<3;i++)
+        for(int i = 0; i < 3; i++)
         {
-            options[i].SetActive(true);
+            options[i].SetActive(display);
         }
     }
 
     IEnumerator TypeSentence(string sentence)
     {
-        Sentence.text = "";
+        this.sentence.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
-            Sentence.text += letter;
+            this.sentence.text += letter;
             yield return new WaitForSeconds(0.1f);
         }
     }
@@ -122,27 +113,14 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsDialogueOpen", false);
         nextButton.SetActive(true);
-        for (int i = 0; i < 3; i++)
-        {
-            options[i].SetActive(false);
-        }
-        if(correctDefaultTrigger)
-        {
-            correctDeafultDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
-            correctDefaultTrigger = false;
-            CustomerManager.cm.ExitCurrentCustomer();
-        }
-        if (wrongDefaultTrigger)
-        {
-            wrongDefaultDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
-            wrongDefaultTrigger = false;
-            CustomerManager.cm.ReadyForNextCustomer(true);
-        }
+        DisplayOptions(false);
+        CustomerManager.cm.ExitCurrentCustomer();
     }
 
     public void OptionClicked(int option)
     {
-        if (CorrectOption == option)
+        //(correctOption == option) ? OnCorrectAnswer() : OnWrongAnswer();
+        if (correctOption == option)
         {
             OnCorrectAnswer();
         }
@@ -154,16 +132,14 @@ public class DialogueManager : MonoBehaviour
 
     private void OnCorrectAnswer()
     {
-        EndDialogue();
-        correctDefaultTrigger = true;
-        CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerCorrectDialogue();
+        DisplayOptions(false);
+        CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(1);
     }
 
     private void OnWrongAnswer()
     {
-        EndDialogue();
-        wrongDefaultTrigger = true;
-        CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerWrongDialogue();
+        DisplayOptions(false);
+        CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(2);
     }
 
     public void PlayActiveCustomerDialogue()
@@ -171,7 +147,7 @@ public class DialogueManager : MonoBehaviour
         var activeCustomer = CustomerManager.cm.activeCustomer;
         var diaogueTrigger = activeCustomer.GetComponent<DialogueTrigger>();
         if (diaogueTrigger != null)
-            diaogueTrigger.TriggerDialogue();
+            CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(0);
     }
 }
 

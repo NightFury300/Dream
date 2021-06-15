@@ -4,22 +4,62 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue dialogue;
-    public Dialogue correctDialogue;
-    public Dialogue wrongDialogue;
+    public Dialogue[] dialogues;
+    public Dialogue[] correctDialogues;
+    public Dialogue[] wrongDialogues;
 
+    int currentDialogueIndex;
+    int currentCorrectDialogueIndex;
+    int currentWrongDialogueIndex;
     public void TriggerDialogue()
     {
-        DialogueManager.dm.StartDialogue(dialogue);
+        DialogueManager.dm.StartDialogue(dialogues[currentDialogueIndex]);
+        currentDialogueIndex++;
     }
 
     public void TriggerCorrectDialogue()
     {
-        DialogueManager.dm.StartDialogue(correctDialogue);
+        DialogueManager.dm.StartDialogue(correctDialogues[currentCorrectDialogueIndex]);
+        currentCorrectDialogueIndex++;
     }
 
     public void TriggerWrongDialogue()
     {
-        DialogueManager.dm.StartDialogue(wrongDialogue);
+        DialogueManager.dm.StartDialogue(wrongDialogues[currentWrongDialogueIndex]);
+        currentWrongDialogueIndex++;
+    }
+
+    public void TriggerAppropriateDialogue(int dialogueType)
+    {
+        if (dialogueType == 0)
+        {
+            if (currentDialogueIndex >= dialogues.Length)
+            {
+                DialogueManager.dm.EndDialogue();
+                return;
+            }
+            else
+                TriggerDialogue();
+        }
+        else if (dialogueType == 1)
+        {
+            if (currentCorrectDialogueIndex >= correctDialogues.Length)
+            {
+                DialogueManager.dm.EndDialogue();
+                return;
+            }
+            else
+                TriggerCorrectDialogue();
+        }
+        else if (dialogueType == 2)
+        {
+            if (currentWrongDialogueIndex >= wrongDialogues.Length)
+            {
+                DialogueManager.dm.EndDialogue();
+                return;
+            }
+            else
+                TriggerWrongDialogue();
+        }
     }
 }

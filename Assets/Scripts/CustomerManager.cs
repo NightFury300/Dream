@@ -12,11 +12,11 @@ public class CustomerManager : MonoBehaviour
     [HideInInspector]
     public GameObject activeCustomer;
 
-    private Vector2 WayPoint;
+    private Vector2 wayPoint;
     [SerializeField]
-    private Vector2 ExitTo;
+    private Vector2 exitFrom;
     [SerializeField]
-    private Vector2 EntryTo;
+    private Vector2 entryTo;
     [SerializeField]
     private float speed = 5.0f;
 
@@ -25,7 +25,7 @@ public class CustomerManager : MonoBehaviour
     private bool destinationReached = true;
 
     [SerializeField]
-    private GameObject NewCustomerButton;
+    private GameObject newCustomerButton;
     private void Awake()
     {
         if(cm == null)
@@ -45,9 +45,9 @@ public class CustomerManager : MonoBehaviour
     private void MoveToWayPoint()
     {
         Vector2 currentLoc = activeCustomer.transform.position;
-        Vector2 distance =   WayPoint - currentLoc;
+        Vector2 distance =   wayPoint - currentLoc;
 
-        if (!(Mathf.Abs(distance.magnitude) < 2f))
+        if (!(Mathf.Abs(distance.magnitude) < 0.1f))
         {
             activeCustomer.GetComponent<Rigidbody2D>().velocity = new Vector2(distance.normalized.x * speed,
                                                                         distance.normalized.y * speed);
@@ -56,9 +56,9 @@ public class CustomerManager : MonoBehaviour
         {
             activeCustomer.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             destinationReached = true;
-            if (WayPoint.Equals(EntryTo))
+            if (wayPoint.Equals(entryTo))
             {
-                activeCustomer.GetComponent<DialogueTrigger>().TriggerDialogue();
+                activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(0);
             }
             else
             {
@@ -73,7 +73,7 @@ public class CustomerManager : MonoBehaviour
         if (customerIndex < customers.Length)
         {
             activeCustomer = customers[customerIndex++];
-            WayPoint = EntryTo;
+            wayPoint = entryTo;
             destinationReached = false;
         }
         else
@@ -85,12 +85,13 @@ public class CustomerManager : MonoBehaviour
 
     public void ExitCurrentCustomer()
     {
-        WayPoint = ExitTo;
+        wayPoint = exitFrom;
         destinationReached = false;
     }
 
     public void ReadyForNextCustomer(bool ready)
     {
-        NewCustomerButton.SetActive(ready);
+        if(customerIndex < customers.Length)
+            newCustomerButton.SetActive(ready);
     }
 }

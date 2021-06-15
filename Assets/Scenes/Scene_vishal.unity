@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &62004554
 Transform:
   m_ObjectHideFlags: 0
@@ -185,40 +185,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711ebcfea482c5e4bb52421660d62700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    Name: Mr.Smith
-    Sentences:
-    - Hey There!
-    - Yeah
-    - Alright
-    Option:
-    - Kalm
-    - Panik
-    - Nuuuu
-    EnableOptions: 1
-    CorrectOption: 2
-  correctDialogue:
-    Name: Mr.Smith
-    Sentences:
-    - Ahoy !
-    - Voila!
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
-  wrongDialogue:
-    Name: Mr.Smith
-    Sentences:
-    - Damn!
-    - Oh Noooooooo!
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
+  dialogues:
+  - {fileID: 11400000, guid: c51362644c123774fa71e7807b2805e2, type: 2}
+  - {fileID: 11400000, guid: f6832601e505f0c4cb347f2c7ac9c3e0, type: 2}
+  correctDialogues:
+  - {fileID: 11400000, guid: f440fab927d641e46a28676137232c18, type: 2}
+  - {fileID: 11400000, guid: 1475a0d9dfb6b6848b28f671c19e8f62, type: 2}
+  wrongDialogues:
+  - {fileID: 11400000, guid: 257e70b5e86dc504e8cc7e25d93ec4e9, type: 2}
+  - {fileID: 11400000, guid: 882a0b6bed9545b419b671ef1755e7e7, type: 2}
 --- !u!4 &71590808
 Transform:
   m_ObjectHideFlags: 0
@@ -563,35 +538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711ebcfea482c5e4bb52421660d62700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    Name: Bingo!
-    Sentences:
-    - Great Job!
-    - You successfully saved your paitent's life.
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
-  correctDialogue:
-    Name: 
-    Sentences: []
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
-  wrongDialogue:
-    Name: 
-    Sentences: []
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
+  dialogues: []
+  correctDialogues: []
+  wrongDialogues: []
 --- !u!1 &198201139
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +565,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198201139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 202, y: 99, z: 0}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -665,35 +614,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711ebcfea482c5e4bb52421660d62700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    Name: Oh No!
-    Sentences:
-    - You Failed.
-    - The paitent might suffer deep trauma because of this.
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
-  correctDialogue:
-    Name: 
-    Sentences: []
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
-  wrongDialogue:
-    Name: 
-    Sentences: []
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
+  dialogues: []
+  correctDialogues: []
+  wrongDialogues: []
 --- !u!1 &233495249
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,11 +799,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370244164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 499, y: 100, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 71590808}
-  - {fileID: 890387348}
+  - {fileID: 1698814545}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1086,105 +1009,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850438043}
   m_CullTransparentMesh: 1
---- !u!1 &890387347
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 890387348}
-  - component: {fileID: 890387349}
-  - component: {fileID: 890387350}
-  m_Layer: 0
-  m_Name: Customer2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &890387348
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890387347}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 370244165}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &890387349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890387347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 711ebcfea482c5e4bb52421660d62700, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    Name: Mr.Fin
-    Sentences:
-    - Yo boi!
-    - Come on
-    - Yeah yeah
-    Option:
-    - Boom
-    - Tada
-    - Anger
-    EnableOptions: 1
-    CorrectOption: 3
-  correctDialogue:
-    Name: Mr.Fin
-    Sentences:
-    - Yipee...
-    - Magic Magic
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
-  wrongDialogue:
-    Name: Mr.Fin
-    Sentences:
-    - Death
-    - Cry
-    Option:
-    - 
-    - 
-    - 
-    EnableOptions: 0
-    CorrectOption: 0
---- !u!50 &890387350
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890387347}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
 --- !u!1 &1159648493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,7 +1408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1569700838}
   m_Layer: 0
-  m_Name: ExitTo
+  m_Name: ExitFrom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1598,7 +1422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569700837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 499, y: 100, z: 0}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1670,6 +1494,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1698814544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1698814545}
+  - component: {fileID: 1698814547}
+  - component: {fileID: 1698814546}
+  m_Layer: 0
+  m_Name: Customer2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1698814545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698814544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 370244165}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1698814546
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698814544}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!114 &1698814547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698814544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 711ebcfea482c5e4bb52421660d62700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogues:
+  - {fileID: 11400000, guid: afb5ea347d750a942bb013f51ebbb1fc, type: 2}
+  - {fileID: 11400000, guid: 0fb06daadd20a4e40aa130c3a3c2118e, type: 2}
+  correctDialogues:
+  - {fileID: 11400000, guid: 8cdfecd2fd0add14d90285f0cc260e71, type: 2}
+  - {fileID: 11400000, guid: 7d43d96f30f379d4aa5282a622781163, type: 2}
+  wrongDialogues:
+  - {fileID: 11400000, guid: cd905651796841e4a980862a832a16de, type: 2}
+  - {fileID: 11400000, guid: 4cc24431c9c58214d8c14837cc360cbe, type: 2}
 --- !u!1 &1699196556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,19 +1597,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79511548df865a0409cea322ed71cd60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: {fileID: 233495251}
-  Sentence: {fileID: 1448703861}
-  Option1: {fileID: 277128428}
-  Option2: {fileID: 1164266214}
-  Option3: {fileID: 1279040388}
+  name: {fileID: 233495251}
+  sentence: {fileID: 1448703861}
+  option1: {fileID: 277128428}
+  option2: {fileID: 1164266214}
+  option3: {fileID: 1279040388}
   animator: {fileID: 2000450784}
   options:
   - {fileID: 101410490}
   - {fileID: 2073190361}
   - {fileID: 136126552}
   nextButton: {fileID: 1159648493}
-  correctDeafultDialogue: {fileID: 169160941}
-  wrongDefaultDialogue: {fileID: 200244630}
 --- !u!4 &1699196558
 Transform:
   m_ObjectHideFlags: 0
@@ -1904,12 +1800,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customers:
   - {fileID: 71590806}
-  - {fileID: 890387347}
+  - {fileID: 1698814544}
   activeCustomer: {fileID: 0}
-  ExitTo: {x: 499, y: 100}
-  EntryTo: {x: 202, y: 99}
-  speed: 50
-  NewCustomerButton: {fileID: 1779015725}
+  exitFrom: {x: 0, y: 0}
+  entryTo: {x: -3, y: 0}
+  speed: 5
+  newCustomerButton: {fileID: 1779015725}
 --- !u!1 &1959556514
 GameObject:
   m_ObjectHideFlags: 0
