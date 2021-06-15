@@ -75,6 +75,8 @@ public class DialogueManager : MonoBehaviour
         Option3.text = dialogue.Option[2];
         enableOptions = dialogue.EnableOptions;
         CorrectOption = dialogue.CorrectOption;
+        if (Sentences.Count != 0)
+            nextButton.SetActive(true);
         DisplayNextSentence();
     }
 
@@ -112,7 +114,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             Sentence.text += letter;
-            yield return new WaitForSeconds(0.06f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
@@ -128,11 +130,13 @@ public class DialogueManager : MonoBehaviour
         {
             correctDeafultDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
             correctDefaultTrigger = false;
+            CustomerManager.cm.ExitCurrentCustomer();
         }
         if (wrongDefaultTrigger)
         {
             wrongDefaultDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
             wrongDefaultTrigger = false;
+            CustomerManager.cm.ReadyForNextCustomer(true);
         }
     }
 
@@ -152,19 +156,19 @@ public class DialogueManager : MonoBehaviour
     {
         EndDialogue();
         correctDefaultTrigger = true;
-        CustomerManager.cm.customer.GetComponent<DialogueTrigger>().TriggerCorrectDialogue();
+        CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerCorrectDialogue();
     }
 
     private void OnWrongAnswer()
     {
         EndDialogue();
         wrongDefaultTrigger = true;
-        CustomerManager.cm.customer.GetComponent<DialogueTrigger>().TriggerWrongDialogue();
+        CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerWrongDialogue();
     }
 
     public void PlayActiveCustomerDialogue()
     {
-        var activeCustomer = CustomerManager.cm.customer;
+        var activeCustomer = CustomerManager.cm.activeCustomer;
         var diaogueTrigger = activeCustomer.GetComponent<DialogueTrigger>();
         if (diaogueTrigger != null)
             diaogueTrigger.TriggerDialogue();
