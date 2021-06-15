@@ -114,6 +114,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsDialogueOpen", false);
         nextButton.SetActive(true);
         DisplayOptions(false);
+        CustomerManager.cm.ExitCurrentCustomer();
     }
 
     public void OptionClicked(int option)

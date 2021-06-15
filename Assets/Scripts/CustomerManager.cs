@@ -91,6 +91,7 @@ public class CustomerManager : MonoBehaviour
 
     public void ReadyForNextCustomer(bool ready)
     {
-        newCustomerButton.SetActive(ready);
+        if(customerIndex < customers.Length)
+            newCustomerButton.SetActive(ready);
     }
 }
