@@ -64,4 +64,11 @@ public class DialogueTrigger : MonoBehaviour
             }
         }
     }
+
+    public void ResetIndices()
+    {
+        currentDialogueIndex = 0;
+        currentCorrectDialogueIndex = 0;
+        currentWrongDialogueIndex = 0;
+    }
 }
