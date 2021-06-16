@@ -59,7 +59,9 @@ public class DialogueTrigger : MonoBehaviour
                 return;
             }
             else
+            {
                 TriggerWrongDialogue();
+            }
         }
     }
 }
