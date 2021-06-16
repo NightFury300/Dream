@@ -26,8 +26,8 @@ public class CustomerManager : MonoBehaviour
 
     [SerializeField]
     private GameObject newCustomerButton;
-    [SerializeField]
-    private BooleanVariable customerDie;
+    
+    public BooleanVariable customerDie;
 
     private void Awake()
     {
@@ -50,10 +50,7 @@ public class CustomerManager : MonoBehaviour
             if(activeCustomer != null)
                  activeCustomer.GetComponent<Animator>().SetBool("Kneel", true);
         }
-        if(customerDie.runtimeValue)
-        {
-            KillCustomer();
-        }
+        
     }
 
     private void MoveToWayPoint()
@@ -105,6 +102,14 @@ public class CustomerManager : MonoBehaviour
         }
     }
 
+    public void SelectNextOrCurrentCustomer()
+    {
+        if (customerDie.runtimeValue)
+            KillCustomer();
+        else
+            ExitCurrentCustomer();
+    }
+
     public void ExitCurrentCustomer()
     {
         wayPoint = exitTo.position;
@@ -120,10 +125,21 @@ public class CustomerManager : MonoBehaviour
     public void KillCustomer()
     {
         Debug.Log("Play Kill Animation Here");
+        StartCoroutine(WaitBeforeRestart());
+    }
+
+    IEnumerator WaitBeforeRestart()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        RepeatCustomer();
     }
 
     public void RepeatCustomer()
     {
         activeCustomer.transform.position = exitTo.position;
+        customerIndex--;
+        customerDie.runtimeValue = false;
+        ReadyForNextCustomer(true);
+        activeCustomer.GetComponent<DialogueTrigger>().ResetIndices();
     }
 }

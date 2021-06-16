@@ -39,9 +39,6 @@ public class DialogueManager : MonoBehaviour
 
     public static DialogueManager dm;
 
-    [SerializeField]
-    private BooleanVariable customerDie;
-
     private void Awake()
     {
         if (dm == null)
@@ -85,7 +82,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                if (!customerDie.runtimeValue)
+                if (!CustomerManager.cm.customerDie.runtimeValue)
                     CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(0);
                 else
                     EndDialogue();
@@ -120,7 +117,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsDialogueOpen", false);
         nextButton.SetActive(true);
         DisplayOptions(false);
-        CustomerManager.cm.ExitCurrentCustomer();
+        CustomerManager.cm.SelectNextOrCurrentCustomer();
     }
 
     public void OptionClicked(int option)
@@ -145,15 +142,7 @@ public class DialogueManager : MonoBehaviour
     private void OnWrongAnswer()
     {
         CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(2);
-        customerDie.runtimeValue = true;
+        CustomerManager.cm.customerDie.runtimeValue = true;
     }
-    //Unused
-   /* public void PlayActiveCustomerDialogue()
-    {
-        var activeCustomer = CustomerManager.cm.activeCustomer;
-        var diaogueTrigger = activeCustomer.GetComponent<DialogueTrigger>();
-        if (diaogueTrigger != null)
-            CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(0);
-    }*/
 }
 
