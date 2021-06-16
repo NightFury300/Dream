@@ -1457,14 +1457,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - {fileID: 11400000, guid: afb5ea347d750a942bb013f51ebbb1fc, type: 2}
-  - {fileID: 11400000, guid: 0fb06daadd20a4e40aa130c3a3c2118e, type: 2}
+  - {fileID: 11400000, guid: 69292a13956f66548a087973ff5fba87, type: 2}
+  - {fileID: 11400000, guid: 2ff1cf28e14443745a07d8019be2c074, type: 2}
   correctDialogues:
-  - {fileID: 11400000, guid: 8cdfecd2fd0add14d90285f0cc260e71, type: 2}
-  - {fileID: 11400000, guid: 7d43d96f30f379d4aa5282a622781163, type: 2}
+  - {fileID: 11400000, guid: bb6c1c8a66781df41938060834b9615a, type: 2}
+  - {fileID: 11400000, guid: 83b5b9f2a3342af448084bed0e1cdb1e, type: 2}
   wrongDialogues:
-  - {fileID: 11400000, guid: cd905651796841e4a980862a832a16de, type: 2}
-  - {fileID: 11400000, guid: 4cc24431c9c58214d8c14837cc360cbe, type: 2}
+  - {fileID: 11400000, guid: de0c6cdb092f0f74880ed5832a34d768, type: 2}
+  - {fileID: 11400000, guid: 34fdd99375f538e428545a20bfb99230, type: 2}
 --- !u!95 &1455172272
 Animator:
   serializedVersion: 3
