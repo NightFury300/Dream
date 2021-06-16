@@ -14,9 +14,9 @@ public class CustomerManager : MonoBehaviour
 
     private Vector2 wayPoint;
     [SerializeField]
-    private Vector2 exitFrom;
+    private Transform exitTo;
     [SerializeField]
-    private Vector2 entryTo;
+    private Transform entryTo;
     [SerializeField]
     private float speed = 5.0f;
 
@@ -26,6 +26,9 @@ public class CustomerManager : MonoBehaviour
 
     [SerializeField]
     private GameObject newCustomerButton;
+    [SerializeField]
+    private BooleanVariable customerDie;
+
     private void Awake()
     {
         if(cm == null)
@@ -39,6 +42,17 @@ public class CustomerManager : MonoBehaviour
         if (!destinationReached)
         {
             MoveToWayPoint();
+            if (activeCustomer != null)
+                activeCustomer.GetComponent<Animator>().SetBool("Kneel", false);
+        }
+        else
+        {
+            if(activeCustomer != null)
+                 activeCustomer.GetComponent<Animator>().SetBool("Kneel", true);
+        }
+        if(customerDie.runtimeValue)
+        {
+            KillCustomer();
         }
     }
 
@@ -51,12 +65,20 @@ public class CustomerManager : MonoBehaviour
         {
             activeCustomer.GetComponent<Rigidbody2D>().velocity = new Vector2(distance.normalized.x * speed,
                                                                         distance.normalized.y * speed);
+            if(activeCustomer.GetComponent<Rigidbody2D>().velocity.x > 0.0f)
+            {
+                activeCustomer.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else if (activeCustomer.GetComponent<Rigidbody2D>().velocity.x < 0.0f)
+            {
+                activeCustomer.GetComponent<SpriteRenderer>().flipX = true;
+            }
         }
         else
         {
             activeCustomer.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             destinationReached = true;
-            if (wayPoint.Equals(entryTo))
+            if (wayPoint.Equals(entryTo.position))
             {
                 activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(0);
             }
@@ -73,7 +95,7 @@ public class CustomerManager : MonoBehaviour
         if (customerIndex < customers.Length)
         {
             activeCustomer = customers[customerIndex++];
-            wayPoint = entryTo;
+            wayPoint = entryTo.position;
             destinationReached = false;
         }
         else
@@ -85,7 +107,7 @@ public class CustomerManager : MonoBehaviour
 
     public void ExitCurrentCustomer()
     {
-        wayPoint = exitFrom;
+        wayPoint = exitTo.position;
         destinationReached = false;
     }
 
@@ -93,5 +115,15 @@ public class CustomerManager : MonoBehaviour
     {
         if(customerIndex < customers.Length)
             newCustomerButton.SetActive(ready);
+    }
+
+    public void KillCustomer()
+    {
+        Debug.Log("Play Kill Animation Here");
+    }
+
+    public void RepeatCustomer()
+    {
+        activeCustomer.transform.position = exitTo.position;
     }
 }

@@ -39,6 +39,9 @@ public class DialogueManager : MonoBehaviour
 
     public static DialogueManager dm;
 
+    [SerializeField]
+    private BooleanVariable customerDie;
+
     private void Awake()
     {
         if (dm == null)
@@ -82,7 +85,10 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(0);
+                if (!customerDie.runtimeValue)
+                    CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(0);
+                else
+                    EndDialogue();
             }
             return;
         }
@@ -120,6 +126,7 @@ public class DialogueManager : MonoBehaviour
     public void OptionClicked(int option)
     {
         //(correctOption == option) ? OnCorrectAnswer() : OnWrongAnswer();
+        DisplayOptions(false);
         if (correctOption == option)
         {
             OnCorrectAnswer();
@@ -132,22 +139,21 @@ public class DialogueManager : MonoBehaviour
 
     private void OnCorrectAnswer()
     {
-        DisplayOptions(false);
         CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(1);
     }
 
     private void OnWrongAnswer()
     {
-        DisplayOptions(false);
         CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(2);
+        customerDie.runtimeValue = true;
     }
-
-    public void PlayActiveCustomerDialogue()
+    //Unused
+   /* public void PlayActiveCustomerDialogue()
     {
         var activeCustomer = CustomerManager.cm.activeCustomer;
         var diaogueTrigger = activeCustomer.GetComponent<DialogueTrigger>();
         if (diaogueTrigger != null)
             CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(0);
-    }
+    }*/
 }
 
