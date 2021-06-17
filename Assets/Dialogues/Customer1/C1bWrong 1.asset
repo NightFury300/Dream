@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
-  m_Name: C3bWrong
+  m_Name: C1bWrong 1
   m_EditorClassIdentifier: 
-  name: Mr. Smith
+  heading: 
   sentences:
-  - scream
-  - burn
+  - 'Customer: The heat from the door handle sears your palm but, before you can
+    open the door, the glass panel explodes inwards. '
+  - 'Customer: The flames engulf you and cooked flesh is the last thing you smell
+    before you die.'
   options:
   - 
   - 

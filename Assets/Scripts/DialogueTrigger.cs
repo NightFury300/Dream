@@ -6,11 +6,13 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue[] dialogues;
     public Dialogue[] correctDialogues;
-    public Dialogue[] wrongDialogues;
+    public Dialogue[] wrongDialogues1;
+    public Dialogue[] wrongDialogues2;
 
     int currentDialogueIndex;
     int currentCorrectDialogueIndex;
-    int currentWrongDialogueIndex;
+    int currentWrongDialogueIndex1;
+    int currentWrongDialogueIndex2;
     public void TriggerDialogue()
     {
         DialogueManager.dm.StartDialogue(dialogues[currentDialogueIndex]);
@@ -23,10 +25,19 @@ public class DialogueTrigger : MonoBehaviour
         currentCorrectDialogueIndex++;
     }
 
-    public void TriggerWrongDialogue()
+    public void TriggerWrongDialogue(int option)
     {
-        DialogueManager.dm.StartDialogue(wrongDialogues[currentWrongDialogueIndex]);
-        currentWrongDialogueIndex++;
+        switch (option)
+        {
+            case 1:
+                DialogueManager.dm.StartDialogue(wrongDialogues1[currentWrongDialogueIndex1]);
+                currentWrongDialogueIndex1++;
+                break;
+            case 2:
+                DialogueManager.dm.StartDialogue(wrongDialogues2[currentWrongDialogueIndex2]);
+                currentWrongDialogueIndex2++;
+                break;
+        }
     }
 
     public void TriggerAppropriateDialogue(int dialogueType)
@@ -53,28 +64,43 @@ public class DialogueTrigger : MonoBehaviour
         }
         else if (dialogueType == 2)
         {
-            if (currentWrongDialogueIndex >= wrongDialogues.Length)
+            if (currentWrongDialogueIndex1 >= wrongDialogues1.Length)
             {
                 DialogueManager.dm.EndDialogue();
                 return;
             }
             else
             {
-                TriggerWrongDialogue();
+                TriggerWrongDialogue(1);
             }
+        }
+        else if (dialogueType == 3)
+        {
+            if (currentWrongDialogueIndex1 >= wrongDialogues1.Length)
+            {
+                DialogueManager.dm.EndDialogue();
+                return;
+            }
+            else
+            {
+                TriggerWrongDialogue(2);
+            }
+
         }
     }
 
-    public void ResetIndices()
-    {
-        currentDialogueIndex = 0;
-        currentCorrectDialogueIndex = 0;
-        currentWrongDialogueIndex = 0;
+        public void ResetIndices()
+        {
+            currentDialogueIndex = 0;
+            currentCorrectDialogueIndex = 0;
+            currentWrongDialogueIndex1 = 0;
+            currentWrongDialogueIndex2 = 0;
+        }
+
+        //Writing this here because no other way to use AnimationEvent which is better than using corutine to respawn
+        public void Respawn()
+        {
+            FindObjectOfType<CustomerManager>().RepeatCustomer();
+        }
     }
 
-    //Writing this here because no other way to use AnimationEvent which is better than using corutine to respawn
-    public void Respawn()
-    {
-        FindObjectOfType<CustomerManager>().RepeatCustomer();
-    }
-}

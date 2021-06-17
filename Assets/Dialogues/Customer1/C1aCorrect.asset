@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
   m_Name: C1aCorrect
   m_EditorClassIdentifier: 
-  name: Mr.Smith
+  heading: 
   sentences:
-  - voila
-  - fabulous
+  - 'Customer: You enter the cabin and start closing the windows and covering the
+    gap under the door. The thick smoke barely slows down.'
   options:
   - 
   - 

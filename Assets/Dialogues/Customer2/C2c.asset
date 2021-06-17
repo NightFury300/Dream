@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
+  m_Name: C2c
+  m_EditorClassIdentifier: 
+  heading: Riddle Me This
+  sentences:
+  - 'Customer: You feel the muscles in your mouth cramp up, your tongue contorting.
+    It heaves out a squelching grunt and scrapes its nails across the rocky surface,
+    before throwing itself into the darkness once more.'
+  - "Customer: \u201CLet us think, hmm\u2026 For the final one...It wants to get
+    it...Or it will get it...Yes, yes.\u201D"
+  - "Customer: \u201CThis thing all things devours; birds, beasts, trees, flowers;
+    gnaws iron, bites steel; grinds hard stones to meal; slays king, ruins town,
+    and beats mountains down.\u201D"
+  options:
+  - Wind
+  - Time
+  - Water
+  enableOptions: 1
+  correctOption: 2

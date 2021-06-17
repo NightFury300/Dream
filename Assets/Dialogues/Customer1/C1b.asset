@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
   m_Name: C1b
   m_EditorClassIdentifier: 
-  name: Mr. Smith
+  heading: 
   sentences:
-  - qweerty
-  - brad
-  - pong
+  - 'Customer: A cough wrestles its way up your throat.'
   options:
-  - oh my dear
-  - qasd
-  - yup
+  - "There\u2019s no hope, run back to the car and try to flee."
+  - Wrap a wet towel around your face to filter the smoke.
+  - Grab the landline to call the authorities
   enableOptions: 1
-  correctOption: 3
+  correctOption: 2

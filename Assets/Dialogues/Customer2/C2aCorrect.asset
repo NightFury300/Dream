@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
   m_Name: C2aCorrect
   m_EditorClassIdentifier: 
-  name: Mr.Smith
+  heading: Riddle Me This
   sentences:
-  - disco
-  - kisko
+  - "Customer: The creature huffs and slams the floor with its fist, a growl rumbling
+    in the shadows.\r\n\u201CHmm, its was lucky this time, maybe it won\u2019t be
+    so the next time!\u201D \r\n"
+  - 'Customer: The creature once again vanishes into the dark, and peeks back out
+    just behind you, its cold breath creeping along your neck. You spin around and
+    stare into its face, gagging at its scent.'
   options:
   - 
   - 
   - 
   enableOptions: 0
-  correctOption: 0
+  correctOption: 2

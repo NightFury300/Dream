@@ -12,10 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
   m_Name: C1bCorrect
   m_EditorClassIdentifier: 
-  name: Mr. Smith
+  heading: 
   sentences:
-  - yayyyyy
-  - hurray
+  - 'Customer: You scramble up the loft ladder while holding the towel to your face
+    - you crack open the window and squint against the wave of heat that rises from
+    the fire below.'
+  - 'Customer: Once you''re up on the roof you hear a chuffing sound in the distance.
+    Above the falling trees and scattering wildlife, a helicopter moves towards you.'
+  - 'Customer: Your mobile phone pings, signal finally returning. Her goodbye sits
+    in your inbox. A simple ''I love you'' before the fire swallowed her up.'
+  - 'Customer: You''re weary of all her words, her soft strange ways. But you''ll
+    never grow tired of hearing that.'
+  - 'Doctor: There you are, back in the present.'
+  - 'Doctor: Thanks for coming in, I hope this gives you some closure. '
   options:
   - 
   - 

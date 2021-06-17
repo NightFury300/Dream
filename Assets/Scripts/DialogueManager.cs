@@ -54,6 +54,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        FindObjectOfType<AudioManager>().Play("DialoguePop");
         sentences.Clear();
         foreach(string sentence in dialogue.sentences)
         {
@@ -108,7 +109,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             this.sentence.text += letter;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
     }
 
@@ -116,6 +117,7 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsDialogueOpen", false);
         nextButton.SetActive(true);
+
         DisplayOptions(false);
         CustomerManager.cm.SelectNextOrCurrentCustomer();
     }
@@ -130,18 +132,35 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            OnWrongAnswer();
+            OnWrongAnswer(option);
         }
     }
 
     private void OnCorrectAnswer()
     {
+        FindObjectOfType<AudioManager>().Play("Correct");
         CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(1);
     }
 
-    private void OnWrongAnswer()
+    private void OnWrongAnswer(int option)
     {
-        CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(2);
+        FindObjectOfType<AudioManager>().Play("Wrong");
+        int i = 1;
+        for(; i <=3;i++)
+        {
+            if(!(correctOption == i))
+            {
+                break;
+            }
+        }
+        if (i == option)
+        {
+            CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(2);
+        }
+        else
+        {
+            CustomerManager.cm.activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(3);
+        }
         CustomerManager.cm.customerDie.runtimeValue = true;
     }
 }

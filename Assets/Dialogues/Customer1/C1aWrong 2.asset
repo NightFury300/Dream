@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
-  m_Name: C3bCorrect
+  m_Name: C1aWrong 2
   m_EditorClassIdentifier: 
-  heading: The Dungeon
+  heading: 
   sentences:
-  - 'Customer: Having learned from your mistakes, you scurry along the walls and
-    find yourselves in front of another door.'
+  - 'Customer: You sprint off in the direction she went after your shouting match.
+    You wouldn''t be here if you''d kept a lid on your temper, if you''d apologised.
+    If you weren''t a coward in a woman''s skin. '
+  - Your guilt burns as bright as the flames, and you don't notice a difference when
+    they both consume you.
   options:
   - 
   - 

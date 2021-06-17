@@ -47,7 +47,7 @@ MonoBehaviour:
   mixerGroup: {fileID: 24300002, guid: 9e2b4d7c41435484fa9a46c7850418d8, type: 2}
   sounds:
   - name: Menu
-    clip: {fileID: 8300000, guid: a21794fac6da64c4d85191e65b7b5bae, type: 3}
+    clip: {fileID: 8300000, guid: d364687bf6ac1f1489819c7bb64a6f93, type: 3}
     volume: 0.761
     volumeVariance: 0
     pitch: 1
@@ -56,7 +56,7 @@ MonoBehaviour:
     mixerGroup: {fileID: 24300002, guid: 9e2b4d7c41435484fa9a46c7850418d8, type: 2}
     source: {fileID: 0}
   - name: Shop
-    clip: {fileID: 8300000, guid: 1504271cc8f99cc4398711ab6d7376cd, type: 3}
+    clip: {fileID: 8300000, guid: 415e3ecf82335874186ecafcd66149ab, type: 3}
     volume: 0.716
     volumeVariance: 0
     pitch: 1
@@ -65,12 +65,39 @@ MonoBehaviour:
     mixerGroup: {fileID: 24300002, guid: 9e2b4d7c41435484fa9a46c7850418d8, type: 2}
     source: {fileID: 0}
   - name: Credits
-    clip: {fileID: 8300000, guid: fb92f437c54c7d64cb2a0fff386c8a5b, type: 3}
+    clip: {fileID: 8300000, guid: 6c224f18f34c5d94897acfde4bc95b75, type: 3}
     volume: 0.735
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
     loop: 1
+    mixerGroup: {fileID: 24300002, guid: 9e2b4d7c41435484fa9a46c7850418d8, type: 2}
+    source: {fileID: 0}
+  - name: Correct
+    clip: {fileID: 8300000, guid: c6f18a3885de97243bb4415022c8d2a3, type: 3}
+    volume: 0.735
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 9e2b4d7c41435484fa9a46c7850418d8, type: 2}
+    source: {fileID: 0}
+  - name: Wrong
+    clip: {fileID: 8300000, guid: 3d6e65a8c228c534996bd43c913c6edc, type: 3}
+    volume: 0.735
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 9e2b4d7c41435484fa9a46c7850418d8, type: 2}
+    source: {fileID: 0}
+  - name: DialoguePop
+    clip: {fileID: 8300000, guid: 3e14625f88ea16443a0257c9696939c8, type: 3}
+    volume: 0.735
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
     mixerGroup: {fileID: 24300002, guid: 9e2b4d7c41435484fa9a46c7850418d8, type: 2}
     source: {fileID: 0}
 --- !u!81 &1670895390195819461

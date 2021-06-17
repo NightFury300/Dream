@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
   m_Name: C2bCorrect
   m_EditorClassIdentifier: 
-  name: Mr. Smith
+  heading: Riddle Me This
   sentences:
-  - yoiiiii
-  - muahhhh
+  - "Customer: The creature, now shaking with rage, screams out. \r\n\r\n\u201CIt
+    thinks it\u2019s so smart doesn\u2019ts it! \r\n"
   options:
   - 
   - 

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
-  m_Name: C2b
+  m_Name: C3cWrong 1
   m_EditorClassIdentifier: 
-  heading: Riddle Me This
+  heading: The Dungeon
   sentences:
-  - "Customer: \u201CAlive without breath, as cold as death; never thirsty, ever
-    drinking, all in mail never clinking.\u201D"
+  - The arm hits you clean in the face before you can unsheath your sword. It knocks
+    you to the ground and starts tearing flesh from your bones, slurping greedily.
   options:
-  - Fish
-  - Tree
-  - Sea
-  enableOptions: 1
-  correctOption: 2
+  - 
+  - 
+  - 
+  enableOptions: 0
+  correctOption: 0
