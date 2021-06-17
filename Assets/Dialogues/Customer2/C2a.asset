@@ -12,13 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
   m_Name: C2a
   m_EditorClassIdentifier: 
-  name: Mr. Fin
+  heading: Riddle Me This
   sentences:
-  - boomba
-  - zoomba
+  - 'Customer: A riddle haveth for you, Madam answer they must, to fix this memory
+    I require thus.'
+  - 'Doctor: A service I provide, to rid you of these confusing lines.'
+  - 'Customer: Your vision slowly comes back to you, along with a throbbing headache.
+    You''re face-down on the slimy floor of a cave and it''s so dark you almost can''t
+    see your hand in front of your face.'
+  - 'Customer: Your ankle stings from the grip of the tentacle that pulled you into
+    the waves. How long had you been out?'
+  - 'Customer: A wet slap, like a fish trying desperately get back into water, echoes
+    behind you. You crane your neck when you hear it again, getting quicker until
+    a creature comes into view.'
+  - 'Customer: It''s hunched over and speaks almost with a lisp. It gives you a cruel
+    grin.'
+  - "\u201CWhat does we have here? A pesky, nosey thing. A game we will play to see
+    if you\u2019ll escape you see.\u201D"
+  - 'Customer: The creature slips in and out of the dark. One moment it is in front
+    of you, the next behind, laughing the entire time. '
+  - "Customer: You feel something slither around your tongue. When you reach for
+    it, there\u2019s nothing there."
+  - "Customer: \u201CWhat has roots as nobody sees, is taller than trees, up, up
+    it goes, and yet never grows?\u201D"
   options:
-  - sed
-  - ded
-  - med
+  - Rocket
+  - Air
+  - Mountain
   enableOptions: 1
   correctOption: 3

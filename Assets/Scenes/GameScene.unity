@@ -161,7 +161,10 @@ MonoBehaviour:
   correctDialogues:
   - {fileID: 11400000, guid: f440fab927d641e46a28676137232c18, type: 2}
   - {fileID: 11400000, guid: 1475a0d9dfb6b6848b28f671c19e8f62, type: 2}
-  wrongDialogues:
+  wrongDialogues1:
+  - {fileID: 11400000, guid: 00086206e90ab9242bf03165f01a7ab9, type: 2}
+  - {fileID: 11400000, guid: 325d89eaed3fc5347b7bfffce7b0be35, type: 2}
+  wrongDialogues2:
   - {fileID: 11400000, guid: 257e70b5e86dc504e8cc7e25d93ec4e9, type: 2}
   - {fileID: 11400000, guid: 882a0b6bed9545b419b671ef1755e7e7, type: 2}
 --- !u!4 &71590808
@@ -1435,12 +1438,27 @@ MonoBehaviour:
   dialogues:
   - {fileID: 11400000, guid: 69292a13956f66548a087973ff5fba87, type: 2}
   - {fileID: 11400000, guid: 2ff1cf28e14443745a07d8019be2c074, type: 2}
+  - {fileID: 11400000, guid: 77763bd9ae3a4594a94ce4c017d50463, type: 2}
+  - {fileID: 11400000, guid: 1938571a9af697649ad193d7aad99197, type: 2}
+  - {fileID: 11400000, guid: 4cba642224e94da49a0074534403b55a, type: 2}
   correctDialogues:
   - {fileID: 11400000, guid: bb6c1c8a66781df41938060834b9615a, type: 2}
   - {fileID: 11400000, guid: 83b5b9f2a3342af448084bed0e1cdb1e, type: 2}
-  wrongDialogues:
+  - {fileID: 11400000, guid: d48065e143e68b14889540c2783c445d, type: 2}
+  - {fileID: 11400000, guid: b735b54a7d6ba9745a9550776dd57b7b, type: 2}
+  - {fileID: 11400000, guid: ad35bdbf1969ff14d993af15ef9734c7, type: 2}
+  wrongDialogues1:
+  - {fileID: 11400000, guid: 42b761be697acf14e8923f5560f559cf, type: 2}
+  - {fileID: 11400000, guid: c3b30ce0f2a5d224aa2459c30754db16, type: 2}
+  - {fileID: 11400000, guid: bbe0e573e19279147bd82c07ae8a3b57, type: 2}
+  - {fileID: 11400000, guid: 4e3f8bd9063273b49acb01f0026c3740, type: 2}
+  - {fileID: 11400000, guid: be565706b02656b4583aff851e8344d2, type: 2}
+  wrongDialogues2:
   - {fileID: 11400000, guid: de0c6cdb092f0f74880ed5832a34d768, type: 2}
   - {fileID: 11400000, guid: 34fdd99375f538e428545a20bfb99230, type: 2}
+  - {fileID: 11400000, guid: 5741cf8850d7bc7459cff350465d60c3, type: 2}
+  - {fileID: 11400000, guid: eb07ce20b1742c148a68075fbca5fbfe, type: 2}
+  - {fileID: 11400000, guid: 35c07fd875f8f55408f4410356ba4759, type: 2}
 --- !u!95 &1455172272
 Animator:
   serializedVersion: 3
@@ -1626,12 +1644,19 @@ MonoBehaviour:
   dialogues:
   - {fileID: 11400000, guid: afb5ea347d750a942bb013f51ebbb1fc, type: 2}
   - {fileID: 11400000, guid: 0fb06daadd20a4e40aa130c3a3c2118e, type: 2}
+  - {fileID: 11400000, guid: 252999b5c2dbb404382d066ce14c46c8, type: 2}
   correctDialogues:
   - {fileID: 11400000, guid: 8cdfecd2fd0add14d90285f0cc260e71, type: 2}
   - {fileID: 11400000, guid: 7d43d96f30f379d4aa5282a622781163, type: 2}
-  wrongDialogues:
+  - {fileID: 11400000, guid: 4c05fe7aa15674a4088203240e2a54d2, type: 2}
+  wrongDialogues1:
+  - {fileID: 11400000, guid: 6aa56b98bf9ab6a4198b39de9d9c7b4f, type: 2}
+  - {fileID: 11400000, guid: a241f58b178e66b46abeeb38e5216b40, type: 2}
+  - {fileID: 11400000, guid: 694dff0c2375d38488d2974f012a3f1f, type: 2}
+  wrongDialogues2:
   - {fileID: 11400000, guid: cd905651796841e4a980862a832a16de, type: 2}
   - {fileID: 11400000, guid: 4cc24431c9c58214d8c14837cc360cbe, type: 2}
+  - {fileID: 11400000, guid: 1add4a7ae2330c248a481f15274a69ea, type: 2}
 --- !u!212 &1698814548
 SpriteRenderer:
   m_ObjectHideFlags: 0

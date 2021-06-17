@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
+  m_Name: C1aWrong 1
+  m_EditorClassIdentifier: 
+  heading: 
+  sentences:
+  - 'Customer: You fumble with the key, hands slow to obey you. You slam your foot
+    onto the accelerator and speed away from the smoke.'
+  - 'Customer: Your gaze flickers over to the picture of you and your girlfriend
+    on the passenger seat. You hope that, like always, she was faster, smarter than
+    you.'
+  - 'Customer: Your sweaty fingers slip from the wheel, the engine whining as you
+    careen off the road.'
+  - 'Customer: You think only of the wide smile you took from her before your skull
+    shatters like the glass of the car windows.'
+  options:
+  - 
+  - 
+  - 
+  enableOptions: 0
+  correctOption: 0

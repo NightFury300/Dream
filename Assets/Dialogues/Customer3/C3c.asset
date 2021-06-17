@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
+  m_Name: C3c
+  m_EditorClassIdentifier: 
+  heading: The Dungeon
+  sentences:
+  - 'Customer: This one has strange engravings on it that run from the centre to
+    the bottom. It''s heavy, only budging when Alf lends a hand.'
+  - 'Customer: Alf''s torch quickly uncovers why the door was so heavy. A creature
+    hangs before you with the limbs of a man and the head of a goat.'
+  - 'Customer: Four heavy chains hold its arms and legs up. Stretched out like a
+    leather hide. Blood pools under it.'
+  - 'Customer: "What is that monstrosity?" Alf shrinks back, shaking his head. "We
+    must leave this vile place, right this instant."'
+  - 'Customer: He pulls at the door but it stays put, even when he pulls with both
+    hands. "Help me with this door, dammit!" '
+  - 'Customer: You move to help him, but something strikes the back of your head
+    and you crumple to the floor.'
+  - 'Customer: When you come around this time, you aren''t greeted by Alf softly
+    snoring to your left. A sharp pain shoots up your back.'
+  - 'Customer: There''s a trail of dried blood leading you out into another tunnel
+    through an open door.'
+  - 'Customer: It''s less cramped and a stream runs down the middle of it. You push
+    through double doors into a large chamber.'
+  - 'Customer: A boney arm swings out in front of you aiming straight for your throat. '
+  options:
+  - 'Pull out your sword '
+  - 'Duck! '
+  - Bite the arm
+  enableOptions: 1
+  correctOption: 2

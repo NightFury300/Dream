@@ -12,13 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
   m_Name: C1a
   m_EditorClassIdentifier: 
-  name: Mr. Smith
+  heading: 
   sentences:
-  - lala
-  - mama
+  - 'Customer: It haunts me. Every time I breathe I smell smoke. Every time I close
+    my eyes I see her.'
+  - 'Doctor: You''ve come to the right place. Be warned - I can take away your ghosts,
+    but I can''t bring them back to life.'
+  - 'Doctor: Wake your demons up, take me back to the smoke.'
+  - 'Customer: Heat stings your eyes - stronger than the warm sunlight that lulled
+    you to sleep on your picnic blanket after the argument. You stumble to your feet,
+    bones heavy.'
+  - 'Customer: You wipe sweat from your brow with trembling hands, as each panting
+    breath draws sweet smoke into your lungs.'
+  - 'Customer: Orange blooms on the treeline, flames grabbing hungrily at branches.'
+  - 'Customer: You hear an almighty crack to your right and a flaming tree crashes
+    to the ground in front of you.'
+  - 'Customer: You''re almost surrounded by the path the fire''s burning into the
+    forest.'
   options:
-  - panik
-  - kalm
-  - nuu
+  - Get back to the holiday cabin and onto higher ground.
+  - Run to the car, speed out of there alone..
+  - Go in on foot to find your girlfriend..
   enableOptions: 1
-  correctOption: 2
+  correctOption: 1

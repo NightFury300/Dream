@@ -12,13 +12,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5551bdb9dd7c9bc46a174a1a905efa0d, type: 3}
   m_Name: C3a
   m_EditorClassIdentifier: 
-  name: Mr. Fin
+  heading: The Dungeon
   sentences:
-  - boomba
-  - zoomba
+  - 'Customer: I wish to forget, this memory is beginning to affect my work.'
+  - 'Doctor: Of course, make yourself comfortable.'
+  - 'Customer: The birds'' early morning song wakes you up. The rising sun flickers
+    in your eyes and you sit up on the bench, lighting your pipe. You take a long
+    draw and glance to your left.'
+  - 'Customer: Relief settles in your sore muscles to find Alf still snoring beside
+    you. You break the peace by kicking him awake, eager to start the long walk ahead
+    of you.'
+  - 'Customer: You sought the same things so many fellow travellers - merchants,
+    thugs, self-proclaimed heroes - sought every year: coin and adventure.'
+  - 'Customer: It''s around midday when you find the ruins, clearly untouched by
+    those who came before you. Mother nature had started to reclaim the precarious
+    structure.'
+  - 'Customer: Vines and moss hid an old set of stairs, leading down to a gloomy-looking
+    tunnel.'
+  - 'Customer: Alf lights a torch, giving you just enough light to see the roots
+    peeking out of the damp cobbled walls. Something drips, like clockwork every
+    second.'
+  - '"This place doesn''t sit right with me, Alf..."'
+  - 'Customer: You press on until the torch reveals a door, and open it with a loud
+    creak. The stench of death invades your nostrils and you gag. Alf holds the light
+    forward.'
+  - 'Customer: You see bits of bone sticking out of the floor. A rat darts from one
+    blood-smeared wall to the other."I did say."'
+  - 'Customer: You lift your leg to step forward but it won''t budge. Alf brings
+    the light down to your ankle, and you see it sinking into the ground. '
+  - 'Customer: You try to pull free with your other leg, but only succeed in getting
+    that stuck too. The thick mud wraps around it, moving as if alive.'
+  - 'Customer: Alf gulps and draws back. "What should I do?"'
   options:
-  - sed
-  - ded
-  - med
+  - "\u201CGet a rope!\u201D"
+  - "Keep still, you\u2019ll stop sinking."
+  - "\u201CLeave, you fool!\u201D"
   enableOptions: 1
-  correctOption: 3
+  correctOption: 1
