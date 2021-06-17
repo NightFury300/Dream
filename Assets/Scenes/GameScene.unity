@@ -947,6 +947,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73f2f09ce7506ee4c970f09dec9816bd, type: 3}
+--- !u!95 &526032507 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 354694788606665921, guid: 73f2f09ce7506ee4c970f09dec9816bd, type: 3}
+  m_PrefabInstance: {fileID: 526032506}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &638156177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,6 +1895,7 @@ MonoBehaviour:
   entryTo: {fileID: 198201140}
   speed: 1
   customerDie: {fileID: 11400000, guid: c239aa14620153a468d758caad4c28fc, type: 2}
+  witchAnimator: {fileID: 526032507}
 --- !u!1 &1839015202
 GameObject:
   m_ObjectHideFlags: 0
