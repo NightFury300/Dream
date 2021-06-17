@@ -60,7 +60,7 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
         animator.SetBool("IsDialogueOpen", true);
-        name.text = dialogue.name;        
+        name.text = dialogue.heading;        
         option1.text = dialogue.options[0];
         option2.text = dialogue.options[1];
         option3.text = dialogue.options[2];

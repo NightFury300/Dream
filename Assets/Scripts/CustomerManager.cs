@@ -24,8 +24,8 @@ public class CustomerManager : MonoBehaviour
 
     private bool destinationReached = true;
 
-    [SerializeField]
-    private GameObject newCustomerButton;
+    /*[SerializeField]
+    private GameObject startGame;//To be Removed in Release*/
     
     public BooleanVariable customerDie;
 
@@ -50,7 +50,6 @@ public class CustomerManager : MonoBehaviour
             if(activeCustomer != null)
                  activeCustomer.GetComponent<Animator>().SetBool("Kneel", true);
         }
-        
     }
 
     private void MoveToWayPoint()
@@ -81,14 +80,14 @@ public class CustomerManager : MonoBehaviour
             }
             else
             {
-                ReadyForNextCustomer(true);
+                EnterNewCustomer();
             }
         }
     }
 
     public void EnterNewCustomer()
     {
-        ReadyForNextCustomer(false);
+        //ReadyForNextCustomer(false);
         if (customerIndex < customers.Length)
         {
             activeCustomer = customers[customerIndex++];
@@ -97,8 +96,7 @@ public class CustomerManager : MonoBehaviour
         }
         else
         {
-            //Back To Main Menu or some credits/game over screen maybe?
-            Debug.Log("No More Customers!");
+            FindObjectOfType<ChangeScene>().OnPlayButtonClicked();
         }
     }
 
@@ -116,30 +114,40 @@ public class CustomerManager : MonoBehaviour
         destinationReached = false;
     }
 
-    public void ReadyForNextCustomer(bool ready)
+    /*public void ReadyForNextCustomer(bool ready)
     {
         if(customerIndex < customers.Length)
             newCustomerButton.SetActive(ready);
-    }
+    }*/
 
     public void KillCustomer()
     {
-        Debug.Log("Play Kill Animation Here");
-        StartCoroutine(WaitBeforeRestart());
+        if (activeCustomer.name.Equals("Customer1"))
+        {
+            int type = Random.Range(1, 4);
+            activeCustomer.GetComponent<Animator>().SetInteger("DeathType", type);
+        }
+        else
+        {
+            activeCustomer.GetComponent<Animator>().SetInteger("DeathType", 1);
+        }
+        //StartCoroutine(WaitBeforeRestart());
     }
-
-    IEnumerator WaitBeforeRestart()
+    //Using Animation events instead
+    /*IEnumerator WaitBeforeRestart()
     {
         yield return new WaitForSecondsRealtime(1f);
         RepeatCustomer();
-    }
+    }*/
 
     public void RepeatCustomer()
     {
+        activeCustomer.GetComponent<Animator>().SetInteger("DeathType", 0);
         activeCustomer.transform.position = exitTo.position;
         customerIndex--;
         customerDie.runtimeValue = false;
-        ReadyForNextCustomer(true);
+        //ReadyForNextCustomer(true);
+        EnterNewCustomer();
         activeCustomer.GetComponent<DialogueTrigger>().ResetIndices();
     }
 }
