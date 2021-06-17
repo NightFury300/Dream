@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CreditsGradient
   m_EditorClassIdentifier: 
   colorMode: 2
-  topLeft: {r: 0.7924528, g: 0.25717336, b: 0.342818, a: 1}
-  topRight: {r: 0.7924528, g: 0.25717336, b: 0.342818, a: 1}
-  bottomLeft: {r: 1, g: 0.73725486, b: 0.4943396, a: 1}
-  bottomRight: {r: 1, g: 0.73725486, b: 0.4943396, a: 1}
+  topLeft: {r: 1, g: 1, b: 1, a: 1}
+  topRight: {r: 1, g: 1, b: 1, a: 1}
+  bottomLeft: {r: 1, g: 0, b: 0.78632927, a: 1}
+  bottomRight: {r: 1, g: 0, b: 0.78632927, a: 1}
