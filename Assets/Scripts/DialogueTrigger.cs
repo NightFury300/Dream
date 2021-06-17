@@ -71,4 +71,10 @@ public class DialogueTrigger : MonoBehaviour
         currentCorrectDialogueIndex = 0;
         currentWrongDialogueIndex = 0;
     }
+
+    //Writing this here because no other way to use AnimationEvent which is better than using corutine to respawn
+    public void Respawn()
+    {
+        FindObjectOfType<CustomerManager>().RepeatCustomer();
+    }
 }

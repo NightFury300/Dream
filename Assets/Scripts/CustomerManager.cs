@@ -125,18 +125,27 @@ public class CustomerManager : MonoBehaviour
 
     public void KillCustomer()
     {
-        Debug.Log("Play Kill Animation Here");
-        StartCoroutine(WaitBeforeRestart());
+        if (activeCustomer.name.Equals("Customer1"))
+        {
+            int type = Random.Range(1, 4);
+            activeCustomer.GetComponent<Animator>().SetInteger("DeathType", type);
+        }
+        else
+        {
+            activeCustomer.GetComponent<Animator>().SetInteger("DeathType", 1);
+        }
+        //StartCoroutine(WaitBeforeRestart());
     }
-
-    IEnumerator WaitBeforeRestart()
+    //Using Animation events instead
+    /*IEnumerator WaitBeforeRestart()
     {
         yield return new WaitForSecondsRealtime(1f);
         RepeatCustomer();
-    }
+    }*/
 
     public void RepeatCustomer()
     {
+        activeCustomer.GetComponent<Animator>().SetInteger("DeathType", 0);
         activeCustomer.transform.position = exitTo.position;
         customerIndex--;
         customerDie.runtimeValue = false;
