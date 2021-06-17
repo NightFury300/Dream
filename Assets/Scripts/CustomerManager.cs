@@ -29,6 +29,7 @@ public class CustomerManager : MonoBehaviour
     
     public BooleanVariable customerDie;
 
+    public Animator witchAnimator;
     private void Awake()
     {
         if(cm == null)
@@ -44,11 +45,14 @@ public class CustomerManager : MonoBehaviour
             MoveToWayPoint();
             if (activeCustomer != null)
                 activeCustomer.GetComponent<Animator>().SetBool("Kneel", false);
+            witchAnimator.SetBool("weave", false);
+            witchAnimator.SetBool("idle", true);
         }
         else
         {
             if(activeCustomer != null)
                  activeCustomer.GetComponent<Animator>().SetBool("Kneel", true);
+            witchAnimator.SetBool("weave", true);
         }
     }
 
@@ -77,6 +81,7 @@ public class CustomerManager : MonoBehaviour
             if (wayPoint.Equals(entryTo.position))
             {
                 activeCustomer.GetComponent<DialogueTrigger>().TriggerAppropriateDialogue(0);
+
             }
             else
             {
@@ -122,15 +127,17 @@ public class CustomerManager : MonoBehaviour
 
     public void KillCustomer()
     {
-        if (activeCustomer.name.Equals("Customer1"))
-        {
-            int type = Random.Range(1, 4);
-            activeCustomer.GetComponent<Animator>().SetInteger("DeathType", type);
-        }
-        else
-        {
-            activeCustomer.GetComponent<Animator>().SetInteger("DeathType", 1);
-        }
+        activeCustomer.GetComponent<Animator>().SetInteger("DeathType", 1);
+        witchAnimator.SetTrigger("shock");
+        //if (activeCustomer.name.Equals("Customer1"))
+        //{
+        //    int type = Random.Range(1, 4);
+        //    activeCustomer.GetComponent<Animator>().SetInteger("DeathType", type);
+        //}
+        //else
+        //{
+        //    activeCustomer.GetComponent<Animator>().SetInteger("DeathType", 1);
+        //}
         //StartCoroutine(WaitBeforeRestart());
     }
     //Using Animation events instead
