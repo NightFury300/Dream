@@ -2363,6 +2363,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackGroundCredits
       objectReference: {fileID: 0}
+    - target: {fileID: 6965307992421286786, guid: 4f604d5e3b64c5e4f921be1e1de868c0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6965307992421286812, guid: 4f604d5e3b64c5e4f921be1e1de868c0, type: 3}
       propertyPath: m_RootOrder
       value: 5

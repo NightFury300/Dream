@@ -28,6 +28,7 @@ public class CustomerManager : MonoBehaviour
     private GameObject startGame;//To be Removed in Release*/
     
     public BooleanVariable customerDie;
+    public GameObject swirl;
 
     public Animator witchAnimator;
     private void Awake()
@@ -47,6 +48,7 @@ public class CustomerManager : MonoBehaviour
                 activeCustomer.GetComponent<Animator>().SetBool("Kneel", false);
             witchAnimator.SetBool("weave", false);
             witchAnimator.SetBool("idle", true);
+            swirl.SetActive(false);
         }
         else
         {
@@ -54,6 +56,7 @@ public class CustomerManager : MonoBehaviour
                  activeCustomer.GetComponent<Animator>().SetBool("Kneel", true);
             witchAnimator.SetBool("weave", true);
             witchAnimator.SetBool("idle", false);
+            swirl.SetActive(true);
         }
     }
 

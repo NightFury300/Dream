@@ -1895,6 +1895,7 @@ MonoBehaviour:
   entryTo: {fileID: 198201140}
   speed: 1
   customerDie: {fileID: 11400000, guid: c239aa14620153a468d758caad4c28fc, type: 2}
+  swirl: {fileID: 2001564290}
   witchAnimator: {fileID: 526032507}
 --- !u!1 &1839015202
 GameObject:
@@ -2185,6 +2186,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba3b13d109eeeaf4fafa498d9fd7551c, type: 3}
+--- !u!1 &2001564290 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1681846807, guid: ba3b13d109eeeaf4fafa498d9fd7551c, type: 3}
+  m_PrefabInstance: {fileID: 2001564289}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2073190361
 GameObject:
   m_ObjectHideFlags: 0
