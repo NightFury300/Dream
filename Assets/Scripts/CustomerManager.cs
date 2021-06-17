@@ -53,6 +53,7 @@ public class CustomerManager : MonoBehaviour
             if(activeCustomer != null)
                  activeCustomer.GetComponent<Animator>().SetBool("Kneel", true);
             witchAnimator.SetBool("weave", true);
+            witchAnimator.SetBool("idle", false);
         }
     }
 
@@ -128,7 +129,7 @@ public class CustomerManager : MonoBehaviour
     public void KillCustomer()
     {
         activeCustomer.GetComponent<Animator>().SetInteger("DeathType", 1);
-        witchAnimator.SetTrigger("shock");
+        witchAnimator.SetBool("shock", true);
         //if (activeCustomer.name.Equals("Customer1"))
         //{
         //    int type = Random.Range(1, 4);
@@ -149,6 +150,7 @@ public class CustomerManager : MonoBehaviour
 
     public void RepeatCustomer()
     {
+        witchAnimator.SetBool("shock", false);
         activeCustomer.GetComponent<Animator>().SetInteger("DeathType", 0);
         activeCustomer.transform.position = exitTo.position;
         customerIndex--;
