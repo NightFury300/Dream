@@ -24,8 +24,8 @@ public class CustomerManager : MonoBehaviour
 
     private bool destinationReached = true;
 
-    [SerializeField]
-    private GameObject startGame;//To be Removed in Release
+    /*[SerializeField]
+    private GameObject startGame;//To be Removed in Release*/
     
     public BooleanVariable customerDie;
 
@@ -50,7 +50,6 @@ public class CustomerManager : MonoBehaviour
             if(activeCustomer != null)
                  activeCustomer.GetComponent<Animator>().SetBool("Kneel", true);
         }
-        
     }
 
     private void MoveToWayPoint()
@@ -89,7 +88,6 @@ public class CustomerManager : MonoBehaviour
     public void EnterNewCustomer()
     {
         //ReadyForNextCustomer(false);
-        startGame.SetActive(false);
         if (customerIndex < customers.Length)
         {
             activeCustomer = customers[customerIndex++];
@@ -98,8 +96,7 @@ public class CustomerManager : MonoBehaviour
         }
         else
         {
-            //Back To Main Menu or some credits/game over screen maybe?
-            Debug.Log("No More Customers!");
+            FindObjectOfType<ChangeScene>().OnPlayButtonClicked();
         }
     }
 
