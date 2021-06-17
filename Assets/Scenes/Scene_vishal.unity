@@ -938,9 +938,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Start Conversation
-
-'
+  m_Text: Start Game
 --- !u!222 &850438046
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1793,7 +1791,7 @@ GameObject:
   - component: {fileID: 1779015728}
   - component: {fileID: 1779015727}
   m_Layer: 5
-  m_Name: Start Conversation
+  m_Name: StartGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1964,7 +1962,7 @@ MonoBehaviour:
   exitTo: {fileID: 1569700838}
   entryTo: {fileID: 198201140}
   speed: 1
-  newCustomerButton: {fileID: 1779015725}
+  startGame: {fileID: 1779015725}
   customerDie: {fileID: 11400000, guid: c239aa14620153a468d758caad4c28fc, type: 2}
 --- !u!1 &1839015202
 GameObject:

@@ -25,7 +25,7 @@ public class CustomerManager : MonoBehaviour
     private bool destinationReached = true;
 
     [SerializeField]
-    private GameObject newCustomerButton;
+    private GameObject startGame;//To be Removed in Release
     
     public BooleanVariable customerDie;
 
@@ -81,14 +81,15 @@ public class CustomerManager : MonoBehaviour
             }
             else
             {
-                ReadyForNextCustomer(true);
+                EnterNewCustomer();
             }
         }
     }
 
     public void EnterNewCustomer()
     {
-        ReadyForNextCustomer(false);
+        //ReadyForNextCustomer(false);
+        startGame.SetActive(false);
         if (customerIndex < customers.Length)
         {
             activeCustomer = customers[customerIndex++];
@@ -116,11 +117,11 @@ public class CustomerManager : MonoBehaviour
         destinationReached = false;
     }
 
-    public void ReadyForNextCustomer(bool ready)
+    /*public void ReadyForNextCustomer(bool ready)
     {
         if(customerIndex < customers.Length)
             newCustomerButton.SetActive(ready);
-    }
+    }*/
 
     public void KillCustomer()
     {
@@ -139,7 +140,8 @@ public class CustomerManager : MonoBehaviour
         activeCustomer.transform.position = exitTo.position;
         customerIndex--;
         customerDie.runtimeValue = false;
-        ReadyForNextCustomer(true);
+        //ReadyForNextCustomer(true);
+        EnterNewCustomer();
         activeCustomer.GetComponent<DialogueTrigger>().ResetIndices();
     }
 }
