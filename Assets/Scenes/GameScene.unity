@@ -945,6 +945,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Witch
       objectReference: {fileID: 0}
+    - target: {fileID: 354694788606665924, guid: 73f2f09ce7506ee4c970f09dec9816bd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73f2f09ce7506ee4c970f09dec9816bd, type: 3}
 --- !u!95 &526032507 stripped
